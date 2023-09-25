@@ -27,15 +27,15 @@ export default class Team {
 
     return {
       next() {
-        if (index > last) {
+        if (index <= last) {
           return {
-            done: true
+            value: newArray[index++],
+            done: false
           }
         }
 
         return {
-          value: newArray[index++],
-          done: false
+          done: true
         }
       }
     }
